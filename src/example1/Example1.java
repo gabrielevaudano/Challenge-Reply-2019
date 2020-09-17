@@ -3,6 +3,7 @@ package example1;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.*;
+import java.util.Scanner; 
 
 public class Example1 {
 
@@ -11,25 +12,26 @@ public class Example1 {
 		List<Character> stack = new ArrayList<Character>();
 		List<Character> flow = new ArrayList<Character>();
 		        
-        try {
-            // apre il file in lettura
-            FileReader filein = new FileReader("input.txt");
-            
-            int next;
-            do {
-                next = filein.read(); // legge il prossimo carattere
-                
-                if (next != -1) { // se non e' finito il file
-                    char nextc = (char) next;
-                    System.out.print(nextc); // stampa il carattere
-                }
+		 Scanner input;
+		try {
+			input = new Scanner(new File("input.txt"));
+			
+			char maze[][] = new char[5][7];
+			  input.nextLine();
+			     for (int row = 0; row < 5; row++) {
+			        String fileLine = input.nextLine();
+			        for (int col = 0; col < 7; col++) {
+			              char nextChar = fileLine.charAt(col);
+			              maze[row][col] = nextChar;
+			              System.out.print(maze[row][col]);
+			        }
+			     }
+			     
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-            } while (next != -1);
-            
-            filein.close(); // chiude il file
-            
-        } catch (IOException e) {
-            System.out.println(e);
-        }
-
+		  
+	}
 }
