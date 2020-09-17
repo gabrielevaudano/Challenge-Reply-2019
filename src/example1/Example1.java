@@ -17,15 +17,15 @@ public class Example1 {
 			input = new Scanner(new File("input.txt"));
 			
 			char maze[][] = new char[5][7];
-			  input.nextLine();
-			     for (int row = 0; row < 5; row++) {
-			        String fileLine = input.nextLine();
-			        for (int col = 0; col < 7; col++) {
-			              char nextChar = fileLine.charAt(col);
-			              maze[row][col] = nextChar;
-			              System.out.print(maze[row][col]);
-			        }
-			     }
+		  input.nextLine();
+		     for (int row = 0; row < 5; row++) {
+		        String fileLine = input.nextLine();
+		        for (int col = 0; col < 7; col++) {
+		              char nextChar = fileLine.charAt(col);
+		              maze[row][col] = nextChar;
+		              System.out.print(maze[row][col]);
+		        }
+		     }
 			     
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
